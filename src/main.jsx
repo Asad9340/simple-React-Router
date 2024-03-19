@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
+import Error from './Error/Error';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/footer',
         element: <Footer />,
+      },
+      {
+        path: '/*',
+        element: <Error/>
       },
     ],
   },
