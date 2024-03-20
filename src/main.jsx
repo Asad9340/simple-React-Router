@@ -6,17 +6,29 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import Home from './components/Home/Home';
 import Error from './Error/Error';
+import Posts from './components/Posts/Posts';
+import Users from './components/Users/Users';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: '/',
-        element: <Home />,
+        loader: () => fetch(`https://jsonplaceholder.typicode.com/posts`),
+        element: <Posts />,
+      },
+      {
+        path: '/users',
+        loader: () => fetch(`https://jsonplaceholder.typicode.com/users`),
+        element: <Users/>
+      },
+      {
+        path: '/users/:userId',
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        element: <Users/>
       },
       {
         path: '/about',
@@ -32,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/*',
-        element: <Error/>
+        element: <Error />,
       },
     ],
   },

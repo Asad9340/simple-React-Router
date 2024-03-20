@@ -12,7 +12,13 @@ function Navbar() {
             className="hover:bg-orange-500 px-3 py-2 rounded-lg hover:text-white duration-300"
             to="/"
           >
-            Home
+            Posts
+          </NavLink>
+          <NavLink
+            className="hover:bg-orange-500 px-3 py-2 rounded-lg hover:text-white duration-300"
+            to="/users"
+          >
+            Users
           </NavLink>
           <NavLink
             className="hover:bg-orange-500 px-3 py-2 rounded-lg hover:text-white duration-300"
