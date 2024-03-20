@@ -1,4 +1,4 @@
-import { useNavigate, useRouteError } from 'react-router-dom';
+import { Link, useNavigate, useRouteError } from 'react-router-dom';
 
 function Error() {
   const error = useRouteError();
@@ -27,7 +27,7 @@ function Error() {
               <button
                 onClick={handleBack}
                 type="button"
-                className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                className="inline-flex items-center rounded-md border border-black px-3 py-2 hover:bg-gray-800 active:bg-gray-900 hover:text-white text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black font-medium duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,11 @@ function Error() {
                 </svg>
                 Go back
               </button>
+              <Link to={"/"}>
+                <button className="px-4 py-2 border rounded-lg border-black hover:bg-gray-800 active:bg-gray-900 hover:text-white font-medium duration-300">
+                  Go Home
+                </button>
+              </Link>
             </div>
           </div>
         </div>
