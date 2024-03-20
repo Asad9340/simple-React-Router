@@ -10,7 +10,7 @@ function UserDetails() {
   };
   return (
     <div className="flex items-center flex-col justify-center">
-      <div className="border rounded-lg p-4 w-1/3">
+      <div className="border rounded-lg p-4 w-full md:w-1/3">
         <h3 className="text-xl font-semibold  bg-gray-900 text-white rounded-lg p-2 text-center">
           Name: {name}
         </h3>
