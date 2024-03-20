@@ -1,3 +1,4 @@
+
 function Post({ post }) {
   console.log(post)
   const { body, title, userId } = post;
